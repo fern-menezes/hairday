@@ -7,14 +7,16 @@ const CopyWebpackPlugin = require("copy-webpack-plugin")
 //exportar as configurações
 module.exports = {
     target: "web",
-    mode: "development",
+    //mode: "development",
+    mode: "production",
 
     //define onde está o arquivo q eu vou usar
     entry: path.resolve(__dirname, "src", "main.js"),
     output: {
         filename: "main.js",
         //onde o arquivo copilado vai ser armazenado
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
+        publicPath: "./"
     },
 
     devServer: {
